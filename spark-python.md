@@ -28,3 +28,8 @@ Yields 1, 4, 9, 16
 
 ### Lazy evaluation
 - Nothing happens till an action is called
+
+#### Running Spark from Local Terminal
+- Suffix the command with `spark-submit`
+- `spark-submit` also takes runtime parameters (that override cluster defaults)
+
