@@ -33,3 +33,20 @@ Yields 1, 4, 9, 16
 - Suffix the command with `spark-submit`
 - `spark-submit` also takes runtime parameters (that override cluster defaults)
 
+#### SparkSQL
+Quick example
+```
+from pyspark.sql import SQLContext, Row
+hiveContext = HiveContext(sc)
+inputData = spark.read.json(dataFile)
+inputData.createOrReplaceTempView("myStructuredStuff")
+myResultDataFrame = hiveContext.sql("""SELECT foo FROM bar ORDER BY foobar""")
+```
+Other stuff possible
+```
+myResultDataFrame.show()
+myResultDataFrame.select("someFieldName")
+myResultDataFrame.filter(myResultDataFrame("someFieldName" > 200)
+myResultDataFrame.groupBy(myResultDataFrame("someFieldName")).mean()
+myResultDataFrame..rdd().map(mapperFunction)
+```
