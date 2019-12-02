@@ -50,3 +50,5 @@ myResultDataFrame.filter(myResultDataFrame("someFieldName" > 200)
 myResultDataFrame.groupBy(myResultDataFrame("someFieldName")).mean()
 myResultDataFrame..rdd().map(mapperFunction)
 ```
+Spark2.0 uses DataSets instead of DataFrames
+
